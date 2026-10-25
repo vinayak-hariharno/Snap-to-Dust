@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Snap to Dust for Google Meet",
+  "version": "1.2.0",
+  "description": "Snap your fingers: you turn to dust on camera and your mic mutes. Snap again and you're back.",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://meet.google.com/*"],
+      "js": ["inject.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://meet.google.com/*"],
+      "js": ["panel.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
